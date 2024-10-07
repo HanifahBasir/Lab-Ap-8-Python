@@ -1,0 +1,15 @@
+def mengubah_detik(detik):
+  jam = detik/3600
+  menit = (detik % 3600)//60
+  detik = detik % 60
+  return f"{jam:02}:{menit:02}:{detik:02}"
+
+
+konfersi_detik_ke_jam ="konfersi detik ke jam"
+total_detik = int(input("Masukkan jumlah detik: "))
+
+format_waktu = mengubah_detik(total_detik)
+
+print(f"{konfersi_detik_ke_jam}")
+print(f"{format_waktu}")
+

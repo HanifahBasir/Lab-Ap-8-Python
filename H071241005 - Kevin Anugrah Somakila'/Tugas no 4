@@ -1,0 +1,14 @@
+def mengubah_suhu(celcius):
+  kelvin = int(suhu_celcius +273)
+  reamur = int(4/5 * suhu_celcius)
+  farenheit = int((suhu_celcius * 9/5) + 32)
+  return kelvin, reamur, farenheit
+
+konfersi_suhu = "konfersi suhu dari Celcius ke Kelvin, Reamur dan Fahrenheit"
+suhu_celcius = int(input("Masukkan suhu dalam Celcius: "))
+
+kelvin, reamur, farenheit = mengubah_suhu(suhu_celcius)
+print(f"{konfersi_suhu}")
+print(f"Hasil konversi dari suhu {suhu_celcius} derajat ke Kelvin adalah : {kelvin}K ")
+print(f"Hasil konversi dari suhu {suhu_celcius} derajat ke Reamur adalah : {reamur}R ")
+print(f"Hasil konversi dari suhu {suhu_celcius} derajat ke Farenheit adalah : {farenheit}F ")
