@@ -19,8 +19,7 @@ except FileExistsError:
     
 #menu utama
 def  menu_utama():
-    films = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\films"
-    tickets = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\tickets"
+
 
     
     #admin
@@ -28,7 +27,7 @@ def  menu_utama():
         #tambah film
         def tambah_film():
             films = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\films"
-            tickets = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\tickets"
+ 
             while True:
                 judul = input("\n--- Tambah film ---\nMasukkan judul film yang ingin ditambah (atau enter untuk kembali): ")
                 tambah = os.path.join(films,  judul)
@@ -44,16 +43,16 @@ def  menu_utama():
         #hapus film
         def hapus_film():
             films = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\films"
-            tickets = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\tickets"
+
             films_list = os.listdir(films)
             print("\n--- Hapus film ---")
             for index, film in enumerate(films_list, start=1):
                 print(f"{index}. {film}")
             judul = int(input("\nmasukkan nomor film yang ingin dihapus (atau enter untuk kembali): "))
-            if 1 <= judul  <= len(films_list):
+            if 1 <= judul <= len(films_list):
                 try:
-                    os.remove(os.path.join(films, judul))
-                    print(f"film {judul} berhasil dihapus")
+                    os.remove(os.path.join(films, films_list[judul - 1]))  # Menggunakan judul yang benar
+                    print(f"film {films_list[judul - 1]} berhasil dihapus")
                 except:
                     print("Gagal menghapus folder film")
             else:
@@ -62,7 +61,7 @@ def  menu_utama():
         def daftar_tiket():
             #lihat daftar tiket
             def lihat_daftar_tiket():
-                films = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\films"
+ 
                 tickets = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\tickets"
                 tickets_list = os.listdir(tickets)
                 try:
@@ -75,7 +74,7 @@ def  menu_utama():
                     print("Gagal menampilkan daftar tiket")
             #lihat detail tiket
             def lihat_detail_tiket():
-                films = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\films"
+
                 tickets = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\tickets"
                 tickets_list = os.listdir(tickets)
                 try:
@@ -98,7 +97,7 @@ def  menu_utama():
                         
             #hapus tiket
             def hapus_tiket():
-                films = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\films"
+
                 tickets = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\tickets"
                 while True:
                     tickets_list = os.listdir(tickets)
@@ -162,11 +161,8 @@ def  menu_utama():
         #lihat daftar film
         def lihat_daftar_film():
             films = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\films"
-            tickets = r"D:\TUGAS LAB\tugas algoritma lab\Lab-Ap-8-Python\H071241065 - Akmal\praktikum-7\tickets"
-            id_tiket = "TICK"
-            time_sekarang = time.localtime()
-            format_waktu = time.strftime("%d%m%Y%H%M%S", time_sekarang)
-            nama_tiket = id_tiket + format_waktu
+
+
             films_list = os.listdir(films)
             try:
                 if not films_list:
