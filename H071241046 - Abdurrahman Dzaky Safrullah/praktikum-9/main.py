@@ -1,36 +1,16 @@
-import os
-import backend
-os.system("cls")
+import time
+from tester import Tester
 
-# import tiket
-# import films
 
-while True:
-    
-    os.system("cls")
-    
-    print(" SELAMAT DATANG DI PROGRAM BIOSKOP ".center(60, "="))
-    print("\n")
-    print("silahkan pilih mode".upper())
-    print("\n")
-    
-    print("1. mode atmin\n".upper())
-    print("2. mode kroco".upper())
-    
-    print("\n")
-    
-    mode = input("mode apa? : ".upper())
+def main():
+    tester = Tester()
 
-    match mode: 
-        case "1" : backend.admin()
-        case "2" : backend.pengunjung()
-        case _ : print("masukkan opsi yang tepat!! (1/2/3)")
-        
-    print("\n")
+    tester.test_break_code(123, 738)
+    tester.test_break_code(456, 912)
+    tester.test_break_code(789, 303)
 
-    quit = input("ingin keluar dari bioskop? (y/n) : ".upper())
-    if quit == "y" or quit =="Y":
-        break
-        
-print("\nterima kasih".upper())
-    
+    time.sleep(2)
+    tester.final_results()
+
+
+main()
