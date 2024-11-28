@@ -1,0 +1,36 @@
+# # rekomendasi saham
+# rekomendasi = {
+#         "Beli": lambda x: x > 5,
+#         "Tahan": lambda x: -3 <= x <= 5,
+#         "Jual": lambda x: x < -3}
+    
+# harga_saham_kemarin = int(input("Masukkan harga saham kemarin: "))
+# harga_saham_saat_ini =105
+# # persentase
+# perubahan_persen = ((harga_saham_saat_ini - harga_saham_kemarin) / harga_saham_kemarin) * 100
+
+# # rekomendasi terhadap perubahan persen
+# rekomendasi_saham = next(key for key, condition in rekomendasi.items() if condition(perubahan_persen))
+
+# # output
+# print(f"Perubahan persentase saham kemarin:{perubahan_persen:.2f}%")
+# print(f"rekomendasi: {rekomendasi_saham}")
+
+# harga saham    
+harga_saham_kemarin = int(input("Masukkan harga saham kemarin: "))
+
+# rekomendasi saham
+harga_saham_saat_ini =105
+
+#  persentase
+perubahan_persen = ((harga_saham_saat_ini - harga_saham_kemarin) / harga_saham_kemarin) * 100
+beli = (perubahan_persen >5)
+tahan = (-3 <= perubahan_persen <= 5)
+jual = (perubahan_persen <-3)
+
+rekomedasi = beli*"beli"+tahan*"tahan"+jual*"jual"
+
+
+# output
+print(f"Perubahan persentase saham :{perubahan_persen:.2f}%")
+print(f"rekomendasi: {rekomedasi}")

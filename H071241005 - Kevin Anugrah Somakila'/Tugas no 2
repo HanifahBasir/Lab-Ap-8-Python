@@ -1,0 +1,9 @@
+# karakter dan kalimat
+karakter = input("Masukkan karakter: ")
+kalimat = input("Masukkan kalimat: ")
+
+petunjuk = (f"{karakter} merupakan bagian dari \"{kalimat}\" ")*(karakter in kalimat ) +  (f"{karakter} tidak ditemukan dalam \"{kalimat}\" ") *(karakter not in kalimat)
+
+# output
+print(petunjuk)
+
